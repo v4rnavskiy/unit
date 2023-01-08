@@ -7,16 +7,27 @@ import static org.testng.Assert.*;
 
 public class CashbackHackServiceTest {
 
-        @Test
-        public void getBalance() {
-            CashbackHackService cash = new CashbackHackService();
+    @Test
+    public void getCashback() {
+        CashbackHackService cash = new CashbackHackService();
 
-            int amount = 900;
-            int actual = cash.remain(amount);
-            int expected = 100;
+        int amount = 1000;
+        int actual = cash.remain(amount);
+        int expected = 0;
 
-            Assert.assertEquals(actual, expected);
-        }
-
+        Assert.assertEquals(actual, expected);
     }
+
+    @Test
+    public void getBalance() {
+        CashbackHackService cash = new CashbackHackService();
+
+        int amount = 900;
+        int actual = cash.remain(amount);
+        int expected = 100;
+
+        Assert.assertEquals(actual, expected);
+    }
+
+}
 
